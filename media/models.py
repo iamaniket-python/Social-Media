@@ -22,12 +22,12 @@ class User(AbstractUser,PermissionsMixin):
 
     USERNAME_FIELD = 'phone_number'
     
-    objects = Usermanager()
+    objects = UserManager()
 
     def __str__(self):
         return self.phone_number
 
-class Usermanager(BaseUserManager):
+class UserManager(BaseUserManager):
     
     def create_user(self,phone_number,password=None):
         if phone_number is None:
